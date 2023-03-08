@@ -10,13 +10,18 @@ class GUI(tk.Frame):
         # Source Code Input Box
         self.source_code_label = tk.Label(self, text="Source Code Input")
         self.source_code_label.grid(row=0, column=0)
-        self.source_code_textbox = tk.Text(self, height=10, width=70)
+        self.source_code_textbox = tk.Text(self, height=10, width=50)
         self.source_code_textbox.grid(row=1, column=0, padx=5, pady=5)
         # Output Box
         self.output_label = tk.Label(self, text="Output")
         self.output_label.grid(row=0, column=1)
-        self.output_textbox = tk.Text(self, height=10, width=70)
+        self.output_textbox = tk.Text(self, height=10, width=50)
         self.output_textbox.grid(row=1, column=1, padx=5, pady=5)
+        #Parser Box
+        self.parser_label=tk.Label(self,text="Parser")
+        self.parser_label.grid(row=0,column=2)
+        self.parser_textbox=tk.Text(self,height=10,width=50)
+        self.parser_textbox.grid(row=1,column=2,padx=5,pady=5)
         # Next Line Button
         self.next_button = tk.Button(self, text="Next Line",command=self.next_line)
         self.next_button.grid(row=2, column=0, columnspan=2, padx=5, pady=5)
