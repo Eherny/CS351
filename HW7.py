@@ -12,13 +12,13 @@ class GUI(tk.Frame):
         self.source_code_label.grid(row=0, column=0)
         self.source_code_textbox = tk.Text(self, height=10, width=50)
         self.source_code_textbox.grid(row=1, column=0, padx=5, pady=5)
-        # Output Box
-        self.output_label = tk.Label(self, text="Output")
-        self.output_label.grid(row=0, column=1)
-        self.output_textbox = tk.Text(self, height=10, width=50)
-        self.output_textbox.grid(row=1, column=1, padx=5, pady=5)
+        # Token Box
+        self.token_label = tk.Label(self, text="Tokens")
+        self.token_label.grid(row=0, column=1)
+        self.token_textbox = tk.Text(self, height=10, width=50)
+        self.token_textbox.grid(row=1, column=1, padx=5, pady=5)
         #Parser Box
-        self.parser_label=tk.Label(self,text="Parser")
+        self.parser_label=tk.Label(self,text="Parser Output")
         self.parser_label.grid(row=0,column=2)
         self.parser_textbox=tk.Text(self,height=10,width=50)
         self.parser_textbox.grid(row=1,column=2,padx=5,pady=5)
@@ -36,6 +36,7 @@ class GUI(tk.Frame):
         if self.current_line < len(lines)-1:
             code_line = lines[self.current_line]
             tokens = CutOneLineTokens(code_line)
+            self.token_textbox.delete("1.0","end")
             for token in tokens:
                 self.output_textbox.insert("end", token + " ")
             self.output_textbox.insert("end", "\n")
