@@ -1,3 +1,4 @@
+#Tucker Shaw, Abraham Gomez, and Eric Hernandez
 #Import required libraries for GUI and RegEx
 from tkinter import *
 from tkinter import ttk
